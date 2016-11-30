@@ -7,9 +7,9 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>webSpring1 Maven Webapp</name>
 	<url>http://maven.apache.org</url>
-	
-	
-	
+
+
+
 	<properties>
 		<springversion>3.1.4.RELEASE</springversion>
 	</properties>
@@ -148,8 +148,15 @@
 			<scope>compile</scope>
 		</dependency>
 		<!-- spring end ===================== -->
-		
-		
+
+		<!-- jstl -->
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+
 	</dependencies>
 	<build>
 		<finalName>webSpring1</finalName>

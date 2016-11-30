@@ -17,9 +17,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class HelloController {
 
 	
-	@RequestMapping(value = "sayHello", method = RequestMethod.GET)
+	@RequestMapping(value = "/sayHello", method = RequestMethod.GET)
 	@ResponseBody
 	public String sayHello(){
 		return "baopan";
+	}
+	
+	
+	@RequestMapping(value = "/index", method = RequestMethod.GET)
+	public String index(){
+		System.out.println("===> this is index.jsp");
+		return "index";
 	}
 }

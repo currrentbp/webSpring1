@@ -12,7 +12,30 @@
                         http://www.springframework.org/schema/aop 
                         http://www.springframework.org/schema/aop/spring-aop-4.0.xsd 
                         http://www.springframework.org/schema/tx 
-                        http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+                        http://www.springframework.org/schema/tx/spring-tx-4.0.xsd 
+                        http://www.springframework.org/schema/util 
+                        http://www.springframework.org/schema/util/spring-util-3.0.xsd ">
 	<!-- 设置使用注解的类所在的jar包 -->
 	<context:component-scan base-package="com.bp.controller" />
+
+
+	<!-- <bean id="loginController" class="org.springframework.web.servlet.mvc.ParameterizableViewController"> 
+		简单的返回视图名 通过viewName的value值login直接调用视图解析器，转发到login.jsp <property name="index" 
+		value="index"></property> </bean> -->
+
+
+	<!-- 视图解析器(只需要配置一个就可以了)： 从逻辑视图到真正视图的映射 -->
+	<bean class="org.springframework.web.servlet.view.UrlBasedViewResolver"> 
+		<!-- url视图解析器 -->
+		<!-- 一般基于jsp技术实现的时候，都会帮jsp隐藏起来。什么叫隐藏呢？ 将jsp放在WEB-INF下面，直接访问jsp发现找不到， 避免直接访问jsp页面，这就叫隐藏。 -->
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView"></property>
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+
+
+
+
 </beans>
