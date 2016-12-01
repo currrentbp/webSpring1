@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * 
@@ -28,5 +29,17 @@ public class HelloController {
 	public String index(){
 		System.out.println("===> this is index.jsp");
 		return "index";
+	}
+	
+	@RequestMapping(value = "/index2", method = RequestMethod.GET)
+	public ModelAndView index2(){
+		System.out.println("===> this is index2.jsp");
+		return new ModelAndView("index2");
+	}
+	
+	@RequestMapping(value = "/index3", method = RequestMethod.GET)
+	public ModelAndView index3(){
+		System.out.println("===> this is index2.jsp");
+		return new ModelAndView("index2");
 	}
 }
